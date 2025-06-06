@@ -136,15 +136,21 @@
         @keyframes shimmer {
             0% {
                 background-position: 0% 50%;
-                filter: drop-shadow(0 0 2px rgba(127, 90, 240, 0.3));
             }
             50% {
                 background-position: 100% 50%;
-                filter: drop-shadow(0 0 5px rgba(127, 90, 240, 0.7));
             }
             100% {
                 background-position: 0% 50%;
-                filter: drop-shadow(0 0 2px rgba(127, 90, 240, 0.3));
+            }
+        }
+        
+        @keyframes blink {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 0.4;
             }
         }
         
@@ -439,10 +445,16 @@
             transform: translateX(200px);
         }
         
+        /* Base appear animation for all cards */
         .project-card.appear {
             opacity: 1;
             transform: translate(0, 0);
             transition: opacity 1.5s cubic-bezier(0.25, 0.1, 0.25, 1), transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        /* Slower fade-in specifically for center cards */
+        .project-card:nth-child(3n+2).appear {
+            transition: opacity 2.5s cubic-bezier(0.25, 0.1, 0.25, 1), transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
         }
         
         /* Hide cards when they're not in the viewport - no transition */
@@ -592,6 +604,169 @@
         }
         /* End Projects Section Styles */
 
+        /* Technologies Section Styles */
+        .technologies-section {
+            padding: 80px 0;
+            text-align: center;
+            /* Removed background color as requested */
+        }
+        
+        .technologies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .technology-card {
+            background-color: #1f1f38;
+            border-radius: 12px;
+            padding: 30px 20px;
+            border: 1px solid #2d2d52;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            /* Animation effects removed as requested */
+        }
+        
+        .tech-icon {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tech-logo {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+        
+        .ts-logo {
+            background-color: #3178c6;
+            color: white;
+        }
+        
+        .js-logo {
+            background-color: #f7df1e;
+            color: #000;
+        }
+        
+        .react-logo {
+            background-color: #61dafb;
+            color: #282c34;
+            font-size: 22px;
+        }
+        
+        .next-logo {
+            background-color: #000;
+            color: white;
+        }
+        
+        .php-logo {
+            background-color: #777bb3;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .html-logo {
+            background-color: #e34c26;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .technology-card h3 {
+            font-size: 1.2em;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+        
+        .technology-card p {
+            font-size: 0.9em;
+            color: #b8b8d4;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        @media (max-width: 992px) {
+            .technologies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .technologies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* End Technologies Section Styles */
+
+        /* Section Divider Styles */
+        .section-divider {
+            width: 100%;
+            height: 2px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes shimmer-bg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes light-run {
+            0% {
+                left: -150px;
+                width: 150px;
+            }
+            100% {
+                left: 100%;
+                width: 150px;
+            }
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #a78bfa, #7f5af0, #4f46e5, #2cb67d);
+            background-size: 300% 300%;
+            animation: shimmer-bg 6s ease infinite;
+            will-change: background-position;
+        }
+        
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -150px;
+            width: 150px;
+            height: 6px;
+            background: linear-gradient(90deg, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.3) 20%,
+                rgba(255, 255, 255, 0.8) 50%, 
+                rgba(255, 255, 255, 0.3) 80%,
+                rgba(255, 255, 255, 0) 100%);
+            animation: light-run 4s ease-in-out infinite;
+            will-change: left;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 45px rgba(255, 255, 255, 0.4);
+            filter: blur(1px);
+            border-radius: 50%;
+        }
+        /* End Section Divider Styles */
+
         /* Responsive adjustments */
         @media (max-width: 992px) {
             .hero {
@@ -713,6 +888,8 @@
             </div>
         </main>
 
+        <div class="section-divider"></div>
+
         <section class="projects-section">
             <h2>Projects</h2>
             <p class="section-subtitle">Discover my creative and innovative projects, spanning design to development, and see how I can add value to your next endeavor</p>
@@ -767,8 +944,124 @@
                         <a href="#" class="btn btn-github">Check on GitHub</a>
                     </div>
                 </div>
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/23233D/FFFFFF?text=CodeMentor+Platform" alt="CodeMentor Platform Preview" class="project-image">
+                    <h3>CodeMentor - Developer Mentorship Platform</h3>
+                    <p>A platform connecting junior developers with experienced mentors for personalized guidance and career growth.</p>
+                    <div class="project-tags">
+                        <span>Vue.js</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>WebSockets</span>
+                        <span>OAuth</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#" class="btn btn-preview">Live preview</a>
+                        <a href="#" class="btn btn-github">Check on GitHub</a>
+                    </div>
+                </div>
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/5D3FD3/FFFFFF?text=DataViz+Dashboard" alt="DataViz Dashboard Preview" class="project-image">
+                    <h3>DataViz - Interactive Analytics Dashboard</h3>
+                    <p>A responsive analytics dashboard with real-time data visualization and customizable widgets for business intelligence.</p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>D3.js</span>
+                        <span>GraphQL</span>
+                        <span>Firebase</span>
+                        <span>Material UI</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#" class="btn btn-preview">Live preview</a>
+                        <a href="#" class="btn btn-github">Check on GitHub</a>
+                    </div>
+                </div>
+                <!-- Project Card 6 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/EFEFEF/333333?text=EcoTracker" alt="EcoTracker Preview" class="project-image">
+                    <h3>EcoTracker - Environmental Impact Monitor</h3>
+                    <p>An application that helps users track and reduce their carbon footprint through personalized recommendations and analytics.</p>
+                    <div class="project-tags">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Firebase</span>
+                        <span>Google Maps API</span>
+                        <span>Machine Learning</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#" class="btn btn-preview">Live preview</a>
+                        <a href="#" class="btn btn-github">Check on GitHub</a>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <div class="section-divider"></div>
+
+        <section class="technologies-section">
+            <h2>Technologies</h2>
+            <p class="section-subtitle">Discover my skills and experience in various technologies through my personal website, where I share insights and innovative solutions</p>
+            
+            <div class="technologies-grid">
+                <!-- TypeScript Card -->
+                <div class="technology-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo ts-logo">TS</span>
+                    </div>
+                    <h3>TypeScript</h3>
+                    <p>Commonly employed across all of my projects, it provides optional static typing for modern features, enhancing robust development practices.</p>
+                </div>
+
+                <!-- JavaScript & jQuery Card -->
+                <div class="technology-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo js-logo">JS</span>
+                    </div>
+                    <h3>JavaScript & jQuery</h3>
+                    <p>JavaScript, celebrated for its optional static typing and contemporary features, stands as a cornerstone in virtually all of my projects, ensuring robust development practices and fostering innovation.</p>
+                </div>
+
+                <!-- React, Zustand Card -->
+                <div class="technology-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo react-logo"><i class="fab fa-react"></i></span>
+                    </div>
+                    <h3>React, Zustand</h3>
+                    <p>A cutting-edge JavaScript library for front-end development, offering a component-based approach for efficient rendering and dynamic user interfaces.</p>
+                </div>
+
+                <!-- Next Card -->
+                <div class="technology-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo next-logo">N</span>
+                    </div>
+                    <h3>Next</h3>
+                    <p>React simplifies front-end development with server-side rendering, automatic code splitting, and SEO-friendly features, empowering developers to create dynamic and responsive web applications with ease</p>
+                </div>
+
+                <!-- PHP, Twig Card -->
+                <div class="technology-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo php-logo">PHP</span>
+                    </div>
+                    <h3>PHP, Twig</h3>
+                    <p>A versatile scripting language powering dynamic web development with its server-side capabilities, database integration, and extensive library support.</p>
+                </div>
+
+                <!-- HTML Card -->
+                <div class="technology-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo html-logo"><i class="fab fa-html5"></i></span>
+                    </div>
+                    <h3>HTML</h3>
+                    <p>The cornerstone of modern web development, it furnishes the essential structure and semantics necessary for crafting interactive and accessible websites that cater to diverse user needs and preferences.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
     </div>
 
     <div class="cookie-banner" id="cookieBanner">
@@ -818,26 +1111,19 @@
             lastScrollPosition = currentScrollPosition;
         });
         
-        // Project card appear animation
+        // Card appear animation for project cards (one-time only) and no animations for technology cards
         document.addEventListener('DOMContentLoaded', () => {
             const projectCards = document.querySelectorAll('.project-card');
             
-            // Create two different Intersection Observers with different thresholds
-            // One for triggering animations (center of viewport) and one for visibility detection (edge of viewport)
+            // Options for the project card animations
             const appearOptions = {
-                // Higher threshold for animation trigger - near center of viewport
-                threshold: 0.5, // Trigger animation when card is 50% visible
-                rootMargin: '-20% 0px -20% 0px' // Narrows the effective viewport to the center
-            };
-            
-            const visibilityOptions = {
-                // Very low threshold to detect when card is barely visible
-                threshold: 0,
+                // Lower threshold to trigger when 1/3 of card is visible
+                threshold: 0.33, // Trigger animation when card is 1/3 visible
                 rootMargin: '0px' // Standard viewport edges
             };
             
-            // First observer - handles the animation when cards reach center of viewport
-            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            // Observer for project cards - one-time animation only
+            const projectCardObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     const card = entry.target;
                     
@@ -849,28 +1135,16 @@
                         
                         setTimeout(() => {
                             card.classList.add('appear');
+                            // Unobserve the card after it appears - animation happens only once
+                            observer.unobserve(card);
                         }, delay);
                     }
-                    // We don't remove the appear class here - that's handled by the visibility observer
                 });
             }, appearOptions);
             
-            // Second observer - only handles visibility detection (at viewport edges)
-            const visibilityObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    const card = entry.target;
-                    
-                    // Only remove appear class when card is completely out of viewport
-                    if (!entry.isIntersecting) {
-                        card.classList.remove('appear');
-                    }
-                });
-            }, visibilityOptions);
-            
-            // Start observing each project card with both observers
+            // Start observing each project card
             projectCards.forEach(card => {
-                appearOnScroll.observe(card);
-                visibilityObserver.observe(card); // Also observe for visibility
+                projectCardObserver.observe(card);
             });
         });
     </script>
