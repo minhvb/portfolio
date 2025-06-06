@@ -252,6 +252,7 @@
             padding: 120px 0 80px; /* Increased top padding to account for fixed header */
             width: 100%;
             position: relative;
+            margin-bottom: 120px;
         }
         .hero-text {
             max-width: 50%;
@@ -293,32 +294,54 @@
         .hero-image-section .decorative-circle-1 {
             width: 350px;
             height: 350px;
-            border: 2px solid #5a5a8a;
-            border-radius: 50%;
             position: absolute;
             top: 50%;
-            bottom: 15px;
-            left: calc(50% - 175px);
+            bottom: 35px;
+            left: calc(50% - 190px);
             transform: translate(-50%, -50%);
-            z-index: 0;
+            z-index: -1;
             box-shadow: 0 0 25px rgba(127, 90, 240, 0.5);
             animation: pulse1 6s infinite ease-in-out;
+            border-radius: 50%;
+            /* Using a more reliable technique for gradient border */
+            background: transparent !important;
+            position: relative;
+        }
+        
+        .hero-image-section .decorative-circle-1::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #7f5af0, #4f46e5, #2cb67d);
+            z-index: -1;
+        }
+        
+        .hero-image-section .decorative-circle-1::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: #1a1a2e; /* Match the page background color */
+            z-index: -1;
         }
         
         @keyframes pulse1 {
             0%, 100% {
                 transform: translate(-50%, -50%) scale(1);
-                border-color: #5a5a8a;
-                border-width: 2px;
-                opacity: 1;
+                opacity: 0.8;
                 box-shadow: 0 0 25px rgba(127, 90, 240, 0.5);
             }
             50% {
                 transform: translate(-50%, -50%) scale(1.5);
-                border-color: rgba(139, 92, 246, 0.7);
-                border-width: 1px;
-                opacity: 0.6;
-                box-shadow: 0 0 35px rgba(139, 92, 246, 0.6);
+                opacity: 1;
+                box-shadow: 0 0 35px rgba(44, 182, 125, 0.6);
             }
         }
         .hero-image-section .decorative-circle-2 {
@@ -342,8 +365,8 @@
                 background: linear-gradient(135deg, #8b5cf6, #10b981);
             }
             50% {
-                transform: scale(1);
-                opacity: 0.6;
+                transform: scale(1.3);
+                opacity: 0.8;
                 box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
                 background: linear-gradient(135deg, #9f7aea, #0d9488);
             }
@@ -397,7 +420,6 @@
 
         /* Projects Section Styles */
         .projects-section {
-            padding: 60px 0;
             text-align: center;
         }
 
@@ -612,7 +634,6 @@
 
         /* Technologies Section Styles */
         .technologies-section {
-            padding: 80px 0;
             text-align: center;
             /* Removed background color as requested */
         }
