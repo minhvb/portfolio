@@ -293,53 +293,59 @@
         .hero-image-section .decorative-circle-1 {
             width: 350px;
             height: 350px;
-            border: 2px solid #3c3c5c;
+            border: 2px solid #5a5a8a;
             border-radius: 50%;
             position: absolute;
             top: 50%;
-            left: 50%;
+            bottom: 15px;
+            left: calc(50% - 175px);
             transform: translate(-50%, -50%);
             z-index: 0;
+            box-shadow: 0 0 25px rgba(127, 90, 240, 0.5);
             animation: pulse1 6s infinite ease-in-out;
         }
         
         @keyframes pulse1 {
             0%, 100% {
                 transform: translate(-50%, -50%) scale(1);
-                border-color: #3c3c5c;
+                border-color: #5a5a8a;
                 border-width: 2px;
+                opacity: 1;
+                box-shadow: 0 0 25px rgba(127, 90, 240, 0.5);
             }
             50% {
                 transform: translate(-50%, -50%) scale(1.5);
-                border-color: rgba(127, 90, 240, 0.5);
+                border-color: rgba(139, 92, 246, 0.7);
                 border-width: 1px;
+                opacity: 0.6;
+                box-shadow: 0 0 35px rgba(139, 92, 246, 0.6);
             }
         }
         .hero-image-section .decorative-circle-2 {
             width: 150px;
             height: 150px;
-            background: linear-gradient(135deg, #7f5af0, #2cb67d); /* Purple to green gradient */
+            background: linear-gradient(135deg, #8b5cf6, #10b981); /* Bolder purple to green gradient */
             border-radius: 50%;
             position: absolute;
-            bottom: 40px; /* Adjust positioning */
+            bottom: 70px; /* Adjust positioning */
             right: 40px; /* Adjust positioning */
             z-index: 1;
-            opacity: 0.8;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
             animation: pulse2 6s infinite ease-in-out;
         }
         
         @keyframes pulse2 {
             0%, 100% {
                 transform: scale(2);
-                opacity: 0.4;
-                box-shadow: 0 0 20px rgba(127, 90, 240, 0.6);
-                background: linear-gradient(135deg, #7f5af0, #2cb67d);
+                opacity: 1;
+                box-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
+                background: linear-gradient(135deg, #8b5cf6, #10b981);
             }
             50% {
                 transform: scale(1);
-                opacity: 0.8;
-                box-shadow: 0 0 10px rgba(127, 90, 240, 0.3);
-                background: linear-gradient(135deg, #8b5cf6, #10b981);
+                opacity: 0.6;
+                box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+                background: linear-gradient(135deg, #9f7aea, #0d9488);
             }
         }
 
