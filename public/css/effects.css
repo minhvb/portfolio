@@ -371,6 +371,165 @@
     }
 }
 
+/* Work Experience Section Styles */
+.work-experience-section {
+    padding: 60px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.work-experience-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.company-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.company-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #a78bfa, #7f5af0, #4f46e5, #2cb67d);
+    background-size: 300% 300%;
+    animation: shimmer 6s ease infinite;
+    filter: drop-shadow(0 0 2px rgba(127, 90, 240, 0.5));
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(127, 90, 240, 0.15);
+}
+
+.company-logo {
+    flex: 0 0 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.company-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 3px rgba(127, 90, 240, 0.5));
+    transition: all 0.3s ease;
+}
+
+.company-card:hover .company-logo img {
+    filter: drop-shadow(0 0 5px rgba(127, 90, 240, 0.8));
+    transform: scale(1.05);
+}
+
+.company-details {
+    flex: 1;
+}
+
+.company-details h3 {
+    font-size: 1.4rem;
+    margin: 0 0 5px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.company-name {
+    font-size: 1.1rem;
+    margin: 0 0 15px;
+    background: linear-gradient(135deg, #a78bfa, #7f5af0, #4f46e5, #2cb67d);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s ease infinite;
+    filter: drop-shadow(0 0 2px rgba(127, 90, 240, 0.5));
+    display: inline-block;
+}
+
+.work-period {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: rgba(224, 224, 224, 0.8);
+    font-size: 0.95rem;
+}
+
+.work-period i {
+    color: #7f5af0;
+}
+
+.responsibility-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.responsibility-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: rgba(224, 224, 224, 0.9);
+    font-size: 0.95rem;
+}
+
+.responsibility-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #7f5af0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .company-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .company-card::before {
+        width: 100%;
+        height: 4px;
+        top: 0;
+        left: 0;
+    }
+    
+    .company-logo {
+        margin-bottom: 20px;
+    }
+    
+    .work-period {
+        justify-content: center;
+    }
+    
+    .responsibility-list li {
+        text-align: left;
+    }
+}
+
 /* Testimonials Section Styles */
 .testimonials-section {
     padding: 60px 0;
