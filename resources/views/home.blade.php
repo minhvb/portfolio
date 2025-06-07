@@ -1568,6 +1568,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- View All Work Experience Button -->
+                <div class="view-all-experience">
+                    <a href="https://google.com" target="_blank" class="view-all-link">View All Work Experience <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
         </section>
 

@@ -389,7 +389,7 @@
     position: absolute;
     left: 50%;
     top: 0;
-    bottom: 0;
+    bottom: -70px;
     width: 2px;
     background: linear-gradient(to bottom, rgba(127, 90, 240, 0.2), rgba(127, 90, 240, 0.8), rgba(127, 90, 240, 0.2));
     transform: translateX(-50%);
@@ -814,4 +814,61 @@
     #testimonialCarousel .carousel-control-next {
         display: none;
     }
+    
+    .view-all-experience {
+        text-align: center;
+    }
+}
+
+/* View All Work Experience Link Styles */
+.view-all-experience {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    width: auto;
+}
+
+/* Connection to timeline line */
+.view-all-experience::before {
+    display: none; /* Removing the redundant dot */
+}
+
+.view-all-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #a78bfa, #7f5af0, #4f46e5, #2cb67d);
+    background-size: 300% 300%;
+    animation: shimmer 6s ease infinite;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(127, 90, 240, 0.4);
+}
+
+.view-all-link i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.view-all-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(127, 90, 240, 0.6);
+    filter: brightness(1.1);
+    color: white;
+}
+
+.view-all-link:hover i {
+    transform: translateX(3px);
+}
+
+.view-all-link:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(127, 90, 240, 0.4);
 }
