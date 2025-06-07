@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabio J.R - Frontend Developer</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Custom Effects CSS -->
+    <link rel="stylesheet" href="/css/effects.css">
     <style>
         body {
             background-color: #1a1a2e; /* Dark blue background */
@@ -261,6 +267,82 @@
             font-size: 3.5em;
             margin: 0 0 20px 0;
             line-height: 1.2;
+            position: relative; /* For positioning the cat animation */
+        }
+        
+        /* Cat animation container */
+        .cat-animation-container {
+            position: relative;
+            display: inline-flex;
+            width: 200px; /* Reduced width to fit better */
+            height: 40px; /* Reduced height to align with text */
+            overflow: visible; /* Allow cat to be visible at edges */
+            vertical-align: middle;
+            margin: 0 8px;
+            white-space: nowrap; /* Prevent line break */
+            background-color: transparent; /* Transparent background */
+        }
+        
+        /* Cat sprite animation */
+        .cat-sprite {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('/assets/images/sprites/Run (1).png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            bottom: 5px;
+            z-index: 10;
+            filter: drop-shadow(0 0 2px rgba(127, 90, 240, 0.5));
+            animation: cat-run-lr 6s linear infinite, cat-sprite-frames 0.8s steps(8) infinite;
+            will-change: transform;
+            image-rendering: pixelated;
+            pointer-events: none;
+        }
+        
+        /* Sprite frame animation using steps() for smooth transitions */
+        @keyframes cat-sprite-frames {
+            0% { background-image: url('/assets/images/sprites/Run (1).png'); }
+            12.5% { background-image: url('/assets/images/sprites/Run (2).png'); }
+            25% { background-image: url('/assets/images/sprites/Run (3).png'); }
+            37.5% { background-image: url('/assets/images/sprites/Run (4).png'); }
+            50% { background-image: url('/assets/images/sprites/Run (5).png'); }
+            62.5% { background-image: url('/assets/images/sprites/Run (6).png'); }
+            75% { background-image: url('/assets/images/sprites/Run (7).png'); }
+            87.5% { background-image: url('/assets/images/sprites/Run (8).png'); }
+            100% { background-image: url('/assets/images/sprites/Run (1).png'); }
+        }
+            /* Animation for left to right and back */
+        @keyframes cat-run-lr {
+            /* Phase 1: Run right (0% to 49%) */
+            0% { left: 5px; transform: scaleX(1) translateY(0); }
+            5% { transform: scaleX(1) translateY(-1px); }
+            10% { transform: scaleX(1) translateY(0); }
+            15% { transform: scaleX(1) translateY(-1px); }
+            20% { transform: scaleX(1) translateY(0); }
+            25% { transform: scaleX(1) translateY(-1px); }
+            30% { transform: scaleX(1) translateY(0); }
+            35% { transform: scaleX(1) translateY(-1px); }
+            40% { transform: scaleX(1) translateY(0); }
+            45% { transform: scaleX(1) translateY(-1px); }
+            49% { left: calc(100% - 50px); transform: scaleX(1) translateY(0); }
+            
+            /* Phase 2: Flip and run left (50% to 99%) */
+            50% { left: calc(100% - 50px); transform: scaleX(-1) translateY(0); }
+            55% { transform: scaleX(-1) translateY(-1px); }
+            60% { transform: scaleX(-1) translateY(0); }
+            65% { transform: scaleX(-1) translateY(-1px); }
+            70% { transform: scaleX(-1) translateY(0); }
+            75% { transform: scaleX(-1) translateY(-1px); }
+            80% { transform: scaleX(-1) translateY(0); }
+            85% { transform: scaleX(-1) translateY(-1px); }
+            90% { transform: scaleX(-1) translateY(0); }
+            95% { transform: scaleX(-1) translateY(-1px); }
+            99% { left: 5px; transform: scaleX(-1) translateY(0); }
+            
+            /* Phase 3: Flip back and start next cycle */
+            100% { left: 5px; transform: scaleX(1) translateY(0); }
         }
         .hero-text .name-highlight {
             color: #a78bfa; /* Lighter purple for name */
@@ -708,6 +790,110 @@
             font-size: 22px;
         }
         
+        .css-logo {
+            background-color: #264de4;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .node-logo {
+            background-color: #339933;
+            color: white;
+            font-size: 22px;
+        }
+        
+        /* View More Button Styles */
+        .hidden-card {
+            display: none;
+        }
+        
+        .view-more-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .view-more-btn {
+            background: linear-gradient(135deg, #7f5af0, #4f46e5, #2cb67d);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(127, 90, 240, 0.4);
+            /* Background size for gradient animation controlled in effects.css */
+        }
+        
+        .view-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(127, 90, 240, 0.6);
+        }
+        
+        .view-more-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .view-more-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .view-more-btn:hover::before {
+            left: 100%;
+        }
+        
+        .laravel-logo {
+            background-color: #ff2d20;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .rails-logo {
+            background-color: #cc0000;
+            color: white;
+        }
+        
+        .python-logo {
+            background-color: #3776ab;
+            color: white;
+        }
+        
+        .aws-logo {
+            background-color: #232f3e;
+            color: #ff9900;
+        }
+        
+        .nestjs-logo {
+            background-color: #e0234e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        
+        .docker-logo {
+            background-color: #2496ed;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .git-logo {
+            background-color: #f05032;
+            color: white;
+            font-size: 22px;
+        }
+        
         .technology-card h3 {
             font-size: 1.2em;
             margin: 0 0 10px 0;
@@ -898,7 +1084,7 @@
         <main class="hero">
             <div class="hero-text">
                 <h1>
-                    Hello, I'm <span class="gradient-text">Vu Binh Minh (Kai)</span>,<br>
+                    Hello, I'm <span class="cat-animation-container"><div class="cat-sprite"></div></span> <span class="gradient-text">Vu Binh Minh (Kai)</span>,<br>
                     <span class="title-highlight">Full Stack Developer</span>
                 </h1>
                 <p>
@@ -1060,7 +1246,7 @@
                 </div>
 
                 <!-- Next Card -->
-                <div class="technology-card">
+                <div class="technology-card hidden-card">
                     <div class="tech-icon">
                         <span class="tech-logo next-logo">N</span>
                     </div>
@@ -1069,7 +1255,7 @@
                 </div>
 
                 <!-- PHP, Twig Card -->
-                <div class="technology-card">
+                <div class="technology-card hidden-card">
                     <div class="tech-icon">
                         <span class="tech-logo php-logo">PHP</span>
                     </div>
@@ -1078,12 +1264,143 @@
                 </div>
 
                 <!-- HTML Card -->
-                <div class="technology-card">
+                <div class="technology-card hidden-card">
                     <div class="tech-icon">
                         <span class="tech-logo html-logo"><i class="fab fa-html5"></i></span>
                     </div>
                     <h3>HTML</h3>
                     <p>The cornerstone of modern web development, it furnishes the essential structure and semantics necessary for crafting interactive and accessible websites that cater to diverse user needs and preferences.</p>
+                </div>
+
+                <!-- CSS Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo css-logo"><i class="fab fa-css3-alt"></i></span>
+                    </div>
+                    <h3>CSS & SASS</h3>
+                    <p>Powerful styling technologies that enable the creation of visually appealing and responsive interfaces with advanced features like variables, nesting, and mixins for efficient development.</p>
+                </div>
+
+                <!-- Node.js Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo node-logo"><i class="fab fa-node-js"></i></span>
+                    </div>
+                    <h3>Node.js</h3>
+                    <p>A JavaScript runtime built on Chrome's V8 engine that enables server-side execution of JavaScript code, facilitating scalable and efficient backend development for web applications.</p>
+                </div>
+
+                <!-- Laravel Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo laravel-logo"><i class="fab fa-laravel"></i></span>
+                    </div>
+                    <h3>Laravel</h3>
+                    <p>A robust PHP framework that follows the MVC pattern, offering elegant syntax and tools for tasks like routing, authentication, and caching to streamline web application development.</p>
+                </div>
+
+                <!-- Docker Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo docker-logo"><i class="fab fa-docker"></i></span>
+                    </div>
+                    <h3>Docker</h3>
+                    <p>A containerization platform that packages applications and their dependencies together, ensuring consistent environments across development, testing, and production stages.</p>
+                </div>
+
+                <!-- Git Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo git-logo"><i class="fab fa-git-alt"></i></span>
+                    </div>
+                    <h3>Git & GitHub</h3>
+                    <p>Essential version control tools that facilitate collaborative development, code management, and project tracking with features for branching, merging, and continuous integration.</p>
+                </div>
+                
+                <!-- Ruby on Rails Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo rails-logo">RoR</span>
+                    </div>
+                    <h3>Ruby on Rails</h3>
+                    <p>A server-side web application framework written in Ruby that follows the MVC pattern, emphasizing convention over configuration for rapid development.</p>
+                </div>
+                
+                <!-- Python Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo python-logo"><i class="fab fa-python"></i></span>
+                    </div>
+                    <h3>Python</h3>
+                    <p>A versatile high-level programming language known for its readability and broad application in web development, data science, and automation.</p>
+                </div>
+                
+                <!-- AWS Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo aws-logo"><i class="fab fa-aws"></i></span>
+                    </div>
+                    <h3>AWS</h3>
+                    <p>A comprehensive cloud platform offering a wide range of services for computing, storage, databases, and deployment of web applications.</p>
+                </div>
+                
+                <!-- Nest.js Card -->
+                <div class="technology-card hidden-card">
+                    <div class="tech-icon">
+                        <span class="tech-logo nestjs-logo"><img src="/assets/images/nest_logo.png" alt="Nest.js" style="width: 24px; height: 24px;"></span>
+                    </div>
+                    <h3>Nest.js</h3>
+                    <p>A progressive Node.js framework for building efficient, reliable, and scalable server-side applications using TypeScript with an architecture inspired by Angular.</p>
+                </div>
+            </div>
+            
+            <div class="view-more-container">
+                <button id="viewMoreTech" class="view-more-btn">View More Technologies <i class="fas fa-chevron-down"></i></button>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="additional-technologies-section">
+            <h2 class="text-center">Additional technologies and skills</h2>
+            <p class="section-subtitle text-center">Discover my additional skills and expertise, elevating projects to new heights of quality and efficiency.</p>
+            
+            <div class="additional-skills-container">
+                <div class="skill-row">
+                    <div class="skill-item">
+                        <span class="skill-dot"></span>
+                        <span>Git, Github</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-dot"></span>
+                        <span>Testing</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-dot"></span>
+                        <span>Linters</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-dot"></span>
+                        <span>SEO</span>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-item">
+                        <span class="skill-dot"></span>
+                        <span>UX/UI</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-dot"></span>
+                        <span>Wordpress</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-dot"></span>
+                        <span>APIs</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-dot"></span>
+                        <span>Google Ads</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1099,81 +1416,9 @@
         </div>
     </div>
 
-    <script>
-        // Simple script to hide cookie banner on click
-        const cookieBanner = document.getElementById('cookieBanner');
-        const acceptCookie = document.getElementById('acceptCookie');
-        const declineCookie = document.getElementById('declineCookie');
-
-        if (cookieBanner && acceptCookie && declineCookie) {
-            acceptCookie.addEventListener('click', () => {
-                cookieBanner.style.display = 'none';
-                // Here you would typically set a cookie to remember this choice
-            });
-            declineCookie.addEventListener('click', () => {
-                cookieBanner.style.display = 'none';
-            });
-        }
-
-        // Scroll effect for header
-        const header = document.querySelector('header');
-        let lastScrollPosition = 0;
-        
-        // Add scroll-active class to header when page loads if not at the top
-        if (window.scrollY > 50) {
-            header.classList.add('scroll-active');
-        }
-        
-        window.addEventListener('scroll', () => {
-            const currentScrollPosition = window.scrollY;
-            
-            // Add or remove scroll-active class based on scroll position
-            if (currentScrollPosition > 50) {
-                header.classList.add('scroll-active');
-            } else {
-                header.classList.remove('scroll-active');
-            }
-            
-            // Update last scroll position
-            lastScrollPosition = currentScrollPosition;
-        });
-        
-        // Card appear animation for project cards (one-time only) and no animations for technology cards
-        document.addEventListener('DOMContentLoaded', () => {
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            // Options for the project card animations
-            const appearOptions = {
-                // Lower threshold to trigger when 1/3 of card is visible
-                threshold: 0.33, // Trigger animation when card is 1/3 visible
-                rootMargin: '0px' // Standard viewport edges
-            };
-            
-            // Observer for project cards - one-time animation only
-            const projectCardObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    const card = entry.target;
-                    
-                    if (entry.isIntersecting) {
-                        // Add a more pronounced delay for each card to create a smoother cascade effect
-                        const columnPosition = (Array.from(projectCards).indexOf(card) % 3) + 1;
-                        const rowPosition = Math.floor(Array.from(projectCards).indexOf(card) / 3) + 1;
-                        const delay = (columnPosition * 200) + (rowPosition * 100); // Delay based on both column and row position
-                        
-                        setTimeout(() => {
-                            card.classList.add('appear');
-                            // Unobserve the card after it appears - animation happens only once
-                            observer.unobserve(card);
-                        }, delay);
-                    }
-                });
-            }, appearOptions);
-            
-            // Start observing each project card
-            projectCards.forEach(card => {
-                projectCardObserver.observe(card);
-            });
-        });
-    </script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Include custom effects JS -->    
+    <script src="/js/effects.js"></script>
 </body>
 </html>
