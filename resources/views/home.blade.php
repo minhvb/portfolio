@@ -1369,37 +1369,133 @@
                 <div class="skill-row">
                     <div class="skill-item">
                         <span class="skill-dot"></span>
-                        <span>Git, Github</span>
+                        <span><i class="fas fa-project-diagram me-2"></i>Project Management</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-dot"></span>
-                        <span>Testing</span>
+                        <span><i class="fas fa-sitemap me-2"></i>System Design</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-dot"></span>
-                        <span>Linters</span>
+                        <span><i class="fas fa-tasks me-2"></i>Scrum</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-dot"></span>
-                        <span>SEO</span>
+                        <span><i class="fas fa-chart-line me-2"></i>Business Analyze</span>
                     </div>
                 </div>
                 <div class="skill-row">
                     <div class="skill-item">
                         <span class="skill-dot"></span>
-                        <span>UX/UI</span>
+                        <span><i class="fas fa-cubes me-2"></i>Microservices</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-dot"></span>
-                        <span>Wordpress</span>
+                        <span><i class="fas fa-credit-card me-2"></i>Payment Gateways</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-dot"></span>
-                        <span>APIs</span>
+                        <span><i class="fas fa-tachometer-alt me-2"></i>Performance Tuning</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-dot"></span>
-                        <span>Google Ads</span>
+                        <span><i class="fas fa-cloud me-2"></i>Serverless</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="testimonials-section">
+            <h2 class="text-center">Testimonials</h2>
+            <p class="section-subtitle text-center">What clients and colleagues say about my work and collaboration</p>
+            
+            <div class="testimonials-container">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-item active">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-quote">
+                                        <i class="fas fa-quote-left"></i>
+                                        <p>Working with Minh was an exceptional experience. His technical expertise and problem-solving skills significantly elevated our project. He consistently delivered high-quality code and innovative solutions ahead of schedule.</p>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <div class="author-image">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4>John Smith</h4>
+                                            <p>CTO at TechInnovate</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-quote">
+                                        <i class="fas fa-quote-left"></i>
+                                        <p>Minh's attention to detail and commitment to clean, maintainable code made him an invaluable asset to our development team. His ability to quickly understand complex requirements and translate them into elegant solutions is remarkable.</p>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <div class="author-image">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4>Sarah Johnson</h4>
+                                            <p>Lead Developer at WebSolutions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-quote">
+                                        <i class="fas fa-quote-left"></i>
+                                        <p>I've collaborated with many developers, but Minh stands out for his technical proficiency and collaborative approach. He not only delivered excellent code but also provided valuable insights that improved our overall architecture.</p>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <div class="author-image">
+                                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="David Chen">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4>David Chen</h4>
+                                            <p>Product Manager at InnovateTech</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                 </div>
             </div>
