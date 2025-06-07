@@ -1407,6 +1407,65 @@
 
         <div class="section-divider"></div>
 
+        <section class="qualifications-section">
+            <h2 class="text-center">Qualifications</h2>
+            <p class="section-subtitle text-center">Academic and professional certifications that have shaped my expertise and knowledge</p>
+            
+            <div class="qualifications-container">
+                <div class="row justify-content-center">
+                    <!-- Bachelor Degree -->
+                    <div class="col-md-4 mb-4">
+                        <div class="qualification-card">
+                            <div class="qualification-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="qualification-details">
+                                <h3>Bachelor of Economic</h3>
+                                <p class="qualification-institution">Thang Long University</p>
+                            </div>
+                            <div class="qualification-badge">
+                                <span>Degree</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- IT Certificate -->
+                    <div class="col-md-4 mb-4">
+                        <div class="qualification-card">
+                            <div class="qualification-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="qualification-details">
+                                <h3>International Information Technology</h3>
+                                <p class="qualification-institution">Bach Khoa Aptech</p>
+                            </div>
+                            <div class="qualification-badge">
+                                <span>Certificate</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Scrum Master Certificate -->
+                    <div class="col-md-4 mb-4">
+                        <div class="qualification-card">
+                            <div class="qualification-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="qualification-details">
+                                <h3>Scrum Master Certificate</h3>
+                                <p class="qualification-institution">Scrum Institute</p>
+                            </div>
+                            <div class="qualification-badge">
+                                <span>Certificate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
         <section class="testimonials-section">
             <h2 class="text-center">Testimonials</h2>
             <p class="section-subtitle text-center">What clients and colleagues say about my work and collaboration</p>
