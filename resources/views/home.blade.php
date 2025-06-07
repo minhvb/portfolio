@@ -1470,64 +1470,102 @@
             <h2 class="text-center">Work Experience</h2>
             <p class="section-subtitle text-center">Companies I've collaborated with and roles I've held throughout my professional journey</p>
             
-            <div class="work-experience-container">
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
                 <!-- Company 1 -->
-                <div class="company-card">
-                    <div class="company-logo">
-                        <img src="/assets/images/company-logos/company1.svg" alt="TechCorp Solutions">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        <span>2022 - Present</span>
                     </div>
-                    <div class="company-details">
-                        <h3>Senior Full Stack Developer</h3>
-                        <h4 class="company-name">TechCorp Solutions</h4>
-                        <div class="work-period">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>January 2022 - Present</span>
+                    <div class="timeline-content">
+                        <div class="company-card">
+                            <div class="company-logo">
+                                <img src="/assets/images/company-logos/company1.svg" alt="TechCorp Solutions">
+                            </div>
+                            <div class="company-details">
+                                <h3>Senior Full Stack Developer</h3>
+                                <h4 class="company-name">TechCorp Solutions</h4>
+                                <ul class="responsibility-list">
+                                    <li>Led development of enterprise-level web applications</li>
+                                    <li>Implemented microservices architecture using Laravel and Vue.js</li>
+                                    <li>Mentored junior developers and conducted code reviews</li>
+                                </ul>
+                            </div>
                         </div>
-                        <ul class="responsibility-list">
-                            <li>Led development of enterprise-level web applications</li>
-                            <li>Implemented microservices architecture using Laravel and Vue.js</li>
-                            <li>Mentored junior developers and conducted code reviews</li>
-                        </ul>
                     </div>
                 </div>
                 
                 <!-- Company 2 -->
-                <div class="company-card">
-                    <div class="company-logo">
-                        <img src="/assets/images/company-logos/company2.svg" alt="InnovateTech Inc.">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        <span>2019 - 2021</span>
                     </div>
-                    <div class="company-details">
-                        <h3>Full Stack Developer</h3>
-                        <h4 class="company-name">InnovateTech Inc.</h4>
-                        <div class="work-period">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>March 2019 - December 2021</span>
+                    <div class="timeline-content">
+                        <div class="company-card">
+                            <div class="company-logo">
+                                <img src="/assets/images/company-logos/company2.svg" alt="InnovateTech Inc.">
+                            </div>
+                            <div class="company-details">
+                                <h3>Full Stack Developer</h3>
+                                <h4 class="company-name">InnovateTech Inc.</h4>
+                                <ul class="responsibility-list">
+                                    <li>Developed and maintained e-commerce platforms</li>
+                                    <li>Integrated payment gateways and third-party APIs</li>
+                                    <li>Optimized database queries and application performance</li>
+                                </ul>
+                            </div>
                         </div>
-                        <ul class="responsibility-list">
-                            <li>Developed and maintained e-commerce platforms</li>
-                            <li>Integrated payment gateways and third-party APIs</li>
-                            <li>Optimized database queries and application performance</li>
-                        </ul>
                     </div>
                 </div>
                 
                 <!-- Company 3 -->
-                <div class="company-card">
-                    <div class="company-logo">
-                        <img src="/assets/images/company-logos/company3.svg" alt="Digital Creations Ltd">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        <span>2017 - 2019</span>
                     </div>
-                    <div class="company-details">
-                        <h3>Web Developer</h3>
-                        <h4 class="company-name">Digital Creations Ltd</h4>
-                        <div class="work-period">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>June 2017 - February 2019</span>
+                    <div class="timeline-content">
+                        <div class="company-card">
+                            <div class="company-logo">
+                                <img src="/assets/images/company-logos/company3.svg" alt="Digital Creations Ltd">
+                            </div>
+                            <div class="company-details">
+                                <h3>Web Developer</h3>
+                                <h4 class="company-name">Digital Creations Ltd</h4>
+                                <ul class="responsibility-list">
+                                    <li>Built responsive websites for clients across various industries</li>
+                                    <li>Implemented CMS solutions using WordPress and custom PHP</li>
+                                    <li>Collaborated with design team to create engaging user experiences</li>
+                                </ul>
+                            </div>
                         </div>
-                        <ul class="responsibility-list">
-                            <li>Built responsive websites for clients across various industries</li>
-                            <li>Implemented CMS solutions using WordPress and custom PHP</li>
-                            <li>Collaborated with design team to create engaging user experiences</li>
-                        </ul>
+                    </div>
+                </div>
+
+                <!-- Company 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        <span>2017 - 2019</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="company-card">
+                            <div class="company-logo">
+                                <img src="/assets/images/company-logos/company3.svg" alt="Digital Creations Ltd">
+                            </div>
+                            <div class="company-details">
+                                <h3>Web Developer</h3>
+                                <h4 class="company-name">Digital Creations Ltd</h4>
+                                <ul class="responsibility-list">
+                                    <li>Built responsive websites for clients across various industries</li>
+                                    <li>Implemented CMS solutions using WordPress and custom PHP</li>
+                                    <li>Collaborated with design team to create engaging user experiences</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
